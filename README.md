@@ -20,8 +20,7 @@ for case in switch(cases[0]):
   if case("third"):
     print "third case found"
     break
-  if case():
-    print "default case found, whoops"
+  
 ```
 
 		 
