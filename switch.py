@@ -1,22 +1,15 @@
-class switch:
-    def __init__(self, value):
-        print "got to init"
-        self.value = value
-        self.fall = False
-    
+class Switch:
+    def __init__(self,cases=[]):
+        self.cases = {}
+        for case in cases:
+            self.cases[case] = case
     def __iter__(self):
-        print "got here"
-        """Return the match method once, then stop"""
         yield self.match
         raise StopIteration
-    
-    def match(self, *args):
-        print "got to match"
-        """Indicate whether or not to enter a case suite"""
-        if self.fall or not args:
-            return True
-        elif self.value in args: # changed for v1.5, see below
-            self.fall = True
-            return True
-        else:
-            return False
+    def match(self,case):
+        try:
+            case = self.cases[case]
+            return case
+        except KeyError:
+            print "Default case reached, value not in switch statement"
+
