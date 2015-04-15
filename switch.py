@@ -1,4 +1,4 @@
-class Switch:
+class switch:
     def __init__(self,cases=[]):
         self.cases = {}
         for case in cases:
