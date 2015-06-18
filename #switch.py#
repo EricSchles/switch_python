@@ -2,7 +2,9 @@
 class Switch:
     def __init__(self):
         self.options = {}
-    def add_option(
+        self.cur = 
+    def add_option(self,option):
+        self.options
         
         
 
